@@ -54,7 +54,7 @@ public class LoginPage extends JFrame {
             int userID = Integer.parseInt(userIDField.getText());
             String password = new String(passwordField.getPassword());
 
-            // Validate user credentials
+
             Person loggedInUser = clubDatabase.getUser(userID, password);
 
             if (loggedInUser != null) {
@@ -71,16 +71,16 @@ public class LoginPage extends JFrame {
     private void openDashboard(Person user) {
         JFrame dashboard;
         if (user instanceof Member) {
-            dashboard = new MemberDashboard((Member) user, clubDatabase, this); // Pass LoginPage reference
+            dashboard = new MemberDashboard((Member) user, clubDatabase, this);
         } else if (user instanceof Staff) {
-            dashboard = new StaffDashboard((Staff) user, clubDatabase, this); // Pass LoginPage reference
+            dashboard = new StaffDashboard((Staff) user, clubDatabase, this);
         } else if (user instanceof Manager) {
-            dashboard = new ManagerDashboard((Manager) user, clubDatabase, this); // Pass LoginPage reference
+            dashboard = new ManagerDashboard((Manager) user, clubDatabase, this);
         } else {
             return;
         }
 
-        setVisible(false); // Hide the login page
-        dashboard.setVisible(true); // Show the appropriate dashboard
+        setVisible(false);
+        dashboard.setVisible(true);
     }
 }

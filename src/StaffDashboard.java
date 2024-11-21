@@ -135,7 +135,7 @@ public class StaffDashboard extends JFrame {
 
     // Send renewal notices to all members
     protected void sendRenewalNotices() {
-        JOptionPane.showMessageDialog(this, "Renewal notices sent to all members.");
+        JOptionPane.showMessageDialog(this, "Renewal notices sent to member.");
     }
 
     // Utility methods for input handling

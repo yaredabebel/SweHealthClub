@@ -8,7 +8,6 @@ public class ClubDatabase {
 
     public ClubDatabase() {
         users = new HashMap<>();
-        // Add some sample users
         addUser(new Member(101, "101", "Jared@example.com", "Jared", "Da Coolest"));
         addUser(new Staff(102, "staff", "RED@example.com", "Red", "Dot"));
         addUser(new Manager(103, "manager", "YaredLeake@gmail.com", "Yared", "Leake"));
@@ -26,7 +25,6 @@ public class ClubDatabase {
         return null;
     }
 
-    // Returns a list of all users
     public List<Person> getAllUsers() {
         return new ArrayList<>(users.values());
     }

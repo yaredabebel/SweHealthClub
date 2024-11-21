@@ -15,7 +15,7 @@ public class LoginPortal {
         return null;
     }
 
-    // Getter for the ClubDatabase
+
     public ClubDatabase getClubDatabase() {
         return clubDatabase;
     }

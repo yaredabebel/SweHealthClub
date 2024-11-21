@@ -57,7 +57,7 @@ public class ManagerDashboard extends JFrame {
         panel.add(button);
     }
 
-    // Verify membership of a customer
+
     private void verifyCustomerMembership() {
         int userID = getUserIDInput("Enter User ID to verify membership:");
         Person user = clubDatabase.getUser(userID, "");
@@ -68,7 +68,7 @@ public class ManagerDashboard extends JFrame {
         }
     }
 
-    // Check if a customer's membership is expired
+
     private void checkForExpiredMembership() {
         int userID = getUserIDInput("Enter User ID to check for expired membership:");
         Person user = clubDatabase.getUser(userID, "");
@@ -79,7 +79,7 @@ public class ManagerDashboard extends JFrame {
         }
     }
 
-    // Record a customer's entry into the gym
+
     private void recordEntry() {
         int userID = getUserIDInput("Enter User ID to record entry:");
         Person user = clubDatabase.getUser(userID, "");
@@ -92,7 +92,7 @@ public class ManagerDashboard extends JFrame {
         }
     }
 
-    // Renew a customer's membership
+
     private void renewMembership() {
         int userID = getUserIDInput("Enter User ID to renew membership:");
         int duration = getIntegerInput("Enter duration to renew (in months):");
@@ -104,7 +104,7 @@ public class ManagerDashboard extends JFrame {
         }
     }
 
-    // Update a customer's information
+
     private void updateUserInfo() {
         int userID = getUserIDInput("Enter User ID to update:");
         String fieldName = JOptionPane.showInputDialog(this, "Enter field to update (e.g., email):");
@@ -142,7 +142,7 @@ public class ManagerDashboard extends JFrame {
 
     // Send renewal notices to all members
     private void sendRenewalNotices() {
-        JOptionPane.showMessageDialog(this, "Renewal notices sent to all members.");
+        JOptionPane.showMessageDialog(this, "Renewal notice sent to member.");
     }
 
     // Generate a report of all users and save it as a PDF file
