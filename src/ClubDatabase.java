@@ -8,8 +8,9 @@ public class ClubDatabase {
 
     public ClubDatabase() {
         users = new HashMap<>();
-        addUser(new Member(101, "101", "Jared@example.com", "Jared", "Da Coolest"));
-        addUser(new Staff(102, "staff", "RED@example.com", "Red", "Dot"));
+        addUser(new Member(100, "100", "reddd@gmail.com", "reddd", "Leake"));
+        addUser(new Member(101, "101", "Jared@gmail.com", "Jared", "Da Coolest"));
+        addUser(new Staff(102, "staff", "RED@gmail.com", "Red", "Dot"));
         addUser(new Manager(103, "manager", "YaredLeake@gmail.com", "Yared", "Leake"));
     }
 
