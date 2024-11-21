@@ -21,12 +21,12 @@ public class ManagerDashboard extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        // Add functionalities as buttons
+
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(9, 1, 10, 10)); // One extra row for "Generate Report"
         add(panel);
 
-        // Add buttons for manager functionalities
+
         addButton(panel, "Verify Customer Membership", e -> verifyCustomerMembership());
         addButton(panel, "Check for Expired Membership", e -> checkForExpiredMembership());
         addButton(panel, "Record Entry", e -> recordEntry());
@@ -43,8 +43,8 @@ public class ManagerDashboard extends JFrame {
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                setVisible(false); // Hide the current dashboard
-                loginPage.setVisible(true); // Show the login page
+                setVisible(false);
+                loginPage.setVisible(true);
             }
         });
         panel.add(backButton);
@@ -117,7 +117,7 @@ public class ManagerDashboard extends JFrame {
         }
     }
 
-    // Add a new member to the system
+
     private void addNewMember() {
         int userID = getIntegerInput("Enter new User ID:");
         String password = JOptionPane.showInputDialog(this, "Enter password:");
@@ -129,7 +129,7 @@ public class ManagerDashboard extends JFrame {
         JOptionPane.showMessageDialog(this, "New member added: " + firstName + " " + lastName);
     }
 
-    // Remove a user from the system
+
     private void removeUser() {
         int userID = getUserIDInput("Enter User ID to remove:");
         Person user = clubDatabase.getUser(userID, "");
@@ -145,7 +145,7 @@ public class ManagerDashboard extends JFrame {
         JOptionPane.showMessageDialog(this, "Renewal notice sent to member.");
     }
 
-    // Generate a report of all users and save it as a PDF file
+
     private void generateReport() {
         String fileName = JOptionPane.showInputDialog(this, "Enter file name for the report (without extension):");
         if (fileName == null || fileName.trim().isEmpty()) {
@@ -181,8 +181,8 @@ public class ManagerDashboard extends JFrame {
                 table.addCell(user instanceof Member ? String.valueOf(((Member) user).getTotalVisits()) : "N/A");
             }
 
-            document.add(table); // Add the table to the document
-            document.close(); // Close the document
+            document.add(table);
+            document.close();
 
             JOptionPane.showMessageDialog(this, "Report successfully generated as " + fileName + ".pdf");
         } catch (Exception e) {
@@ -190,7 +190,7 @@ public class ManagerDashboard extends JFrame {
         }
     }
 
-    // Utility methods for input handling
+
     private int getUserIDInput(String message) {
         String input = JOptionPane.showInputDialog(this, message);
         try {

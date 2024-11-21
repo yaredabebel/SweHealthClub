@@ -3,11 +3,11 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 
 public class StaffDashboard extends JFrame {
-    protected Staff staff; // Works for Staff and its subclasses, like Manager
+    protected Staff staff;
     protected ClubDatabase clubDatabase;
 
     public StaffDashboard(Staff staff, ClubDatabase clubDatabase,JFrame loginPage) {
-        this.staff = staff; // Polymorphic assignment
+        this.staff = staff;
         this.clubDatabase = clubDatabase;
 
         setTitle("Staff Dashboard");
@@ -15,12 +15,12 @@ public class StaffDashboard extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        // Add functionalities as buttons
+
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(8, 1, 10, 10));
         add(panel);
 
-        // Add buttons for staff functionalities
+
         addButton(panel, "Verify Customer Membership", e -> verifyCustomerMembership());
         addButton(panel, "Check for Expired Membership", e -> checkForExpiredMembership());
         addButton(panel, "Record Entry", e -> recordEntry());
@@ -32,25 +32,23 @@ public class StaffDashboard extends JFrame {
 
         JButton backButton = new JButton("Back to Login");
         backButton.addActionListener(e -> {
-            setVisible(false); // Hide the current dashboard
-            loginPage.setVisible(true); // Show the login page
+            setVisible(false);
+            loginPage.setVisible(true);
         });
         panel.add(backButton);
     }
 
     // Method to initialize the UI
-    private void initializeUI() {
+//    private void initializeUI() {
+//
+//    }
 
-    }
-
-    // Helper method to create buttons
     protected void addButton(JPanel panel, String title, ActionListener action) {
         JButton button = new JButton(title);
         button.addActionListener(action);
         panel.add(button);
     }
 
-    // Verify membership of a customer
     protected void verifyCustomerMembership() {
         int userID = getUserIDInput("Enter User ID to verify membership:");
         Person user = clubDatabase.getUser(userID, "");
@@ -61,7 +59,6 @@ public class StaffDashboard extends JFrame {
         }
     }
 
-    // Check if a customer's membership is expired
     protected void checkForExpiredMembership() {
         int userID = getUserIDInput("Enter User ID to check for expired membership:");
         Person user = clubDatabase.getUser(userID, "");
@@ -72,7 +69,6 @@ public class StaffDashboard extends JFrame {
         }
     }
 
-    // Record a customer's entry into the gym
     protected void recordEntry() {
         int userID = getUserIDInput("Enter User ID to record entry:");
         Person user = clubDatabase.getUser(userID, "");
@@ -85,7 +81,6 @@ public class StaffDashboard extends JFrame {
         }
     }
 
-    // Renew a customer's membership
     protected void renewMembership() {
         int userID = getUserIDInput("Enter User ID to renew membership:");
         int duration = getIntegerInput("Enter duration to renew (in months):");
@@ -97,7 +92,6 @@ public class StaffDashboard extends JFrame {
         }
     }
 
-    // Update a customer's information
     protected void updateUserInfo() {
         int userID = getUserIDInput("Enter User ID to update:");
         String fieldName = JOptionPane.showInputDialog(this, "Enter field to update (e.g., email):");
@@ -110,7 +104,6 @@ public class StaffDashboard extends JFrame {
         }
     }
 
-    // Add a new member to the system
     protected void addNewMember() {
         int userID = getIntegerInput("Enter new User ID:");
         String password = JOptionPane.showInputDialog(this, "Enter password:");
@@ -122,7 +115,6 @@ public class StaffDashboard extends JFrame {
         JOptionPane.showMessageDialog(this, "New member added: " + firstName + " " + lastName);
     }
 
-    // Remove a user from the system
     protected void removeUser() {
         int userID = getUserIDInput("Enter User ID to remove:");
         Person user = clubDatabase.getUser(userID, "");
@@ -138,7 +130,7 @@ public class StaffDashboard extends JFrame {
         JOptionPane.showMessageDialog(this, "Renewal notices sent to member.");
     }
 
-    // Utility methods for input handling
+
     protected int getUserIDInput(String message) {
         String input = JOptionPane.showInputDialog(this, message);
         try {

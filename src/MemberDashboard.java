@@ -27,8 +27,8 @@ public class MemberDashboard extends JFrame {
 
         JButton backButton = new JButton("Back to Login");
         backButton.addActionListener(e -> {
-            setVisible(false); // Hide the current dashboard
-            loginPage.setVisible(true); // Show the login page
+            setVisible(false);
+            loginPage.setVisible(true);
         });
         panel.add(backButton);
     }
